@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexChat — Sign In</title>
+  <meta name="description" content="NexChat — Real-time chat app. Sign in or create an account." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="auth-body">
+  <!-- Animated background orbs -->
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-orb orb-3"></div>
+
+  <div class="auth-wrapper">
+    <!-- Branding -->
+    <div class="auth-brand">
+      <div class="brand-logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <path d="M16 2C8.27 2 2 8.27 2 16c0 2.44.65 4.73 1.79 6.71L2 30l7.29-1.79A13.94 13.94 0 0016 30c7.73 0 14-6.27 14-14S23.73 2 16 2z" fill="url(#logoGrad)"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#6C63FF"/>
+              <stop offset="1" stop-color="#43CBFF"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      <h1 class="brand-name">NexChat</h1>
+      <p class="brand-tagline">Real-time conversations, instantly.</p>
+    </div>
+
+    <!-- Auth Card -->
+    <div class="auth-card glass">
+      <!-- Tabs -->
+      <div class="auth-tabs" role="tablist">
+        <button class="tab active" id="tab-login" role="tab" onclick="switchTab('login')">Sign In</button>
+        <button class="tab" id="tab-register" role="tab" onclick="switchTab('register')">Create Account</button>
+        <span class="tab-indicator" id="tab-indicator"></span>
+      </div>
+
+      <!-- Login Form -->
+      <form id="login-form" class="auth-form" autocomplete="off">
+        <div class="form-group">
+          <label for="login-username">Username</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <input type="text" id="login-username" placeholder="Enter your username" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </span>
+            <input type="password" id="login-password" placeholder="Enter your password" required />
+          </div>
+        </div>
+        <div class="form-error" id="login-error"></div>
+        <button type="submit" class="btn-primary" id="login-btn">
+          <span class="btn-text">Sign In</span>
+          <span class="btn-loader" hidden></span>
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="register-form" class="auth-form hidden" autocomplete="off">
+        <div class="form-group">
+          <label for="reg-username">Username</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            <input type="text" id="reg-username" placeholder="Choose a username (min 3 chars)" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </span>
+            <input type="password" id="reg-password" placeholder="Choose a password (min 4 chars)" required />
+          </div>
+        </div>
+        <div class="form-error" id="reg-error"></div>
+        <button type="submit" class="btn-primary" id="reg-btn">
+          <span class="btn-text">Create Account</span>
+          <span class="btn-loader" hidden></span>
+        </button>
+      </form>
+    </div>
+
+    <p class="auth-footer">Chat rooms · Private Messages · Typing Indicators</p>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
